@@ -1,0 +1,259 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Data Manager</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+</head>
+
+<body>
+    <header>
+        <div class="navBar bg-primary pt-3 pb-3">
+            <div class="brand" style="text-align: center;">
+                <a href="" class="brand-name">Data Manager</a>
+            </div>
+        </div>
+    </header>
+    <div class="container" id="main">
+        <div class="row">
+            <div class="col-md-6 text-area">
+                <div class="mb-3">
+                    <label for="" class="form-label"></label>
+                    <textarea class="form-control" name="message" id="message" rows="3"
+                        style="height: 233px;"></textarea>
+                </div>
+                <div class="button-outer" style="display: flex;">
+                    <button type="button" onclick="extractWord()"
+                        class="btn btn-success extBtn mb-3">ExtractWord</button>
+                    <button type="button" onclick="addMore()" class="btn btn-success extBtn mb-3 action-bar ml-3"
+                        id="addMore">Add More</button>
+                    <button type="button" onclick="submitForm()" class="btn btn-success extBtn mb-3 action-bar"
+                        id="sub">SUBMIT</button>
+                </div>
+            </div>
+            <div class="col-md-6 form-area hidden" id="form">
+                <div class="row">
+                    <div class="col mb-3">
+                        <label for="" class="form-label mb-3">Select Type</label>
+                        <select class="form-select" name="type" id="data-type" onchange="changeType()" disabled>
+                            <option value="##1">Type 1</option>
+                            <option value="##2">Type 2</option>
+                            <option value="##3">Type 3</option>
+                        </select>
+
+                    </div>
+                    <div class="col mb-3">
+                        <button type="button" class="btn btn-primary btn-add" style="margin-top: 41px;" id="add-type"
+                            onclick="addType()">Next</button>
+                    </div>
+                    <div class="col mb-3">
+                        <button type="button" class="btn btn-primary btn-add" style="margin-top: 41px;" id="preview"
+                            onclick="preview()">Preview</button>
+                    </div>
+                </div>
+                <div class="col-mb-3">
+                </div>
+                <section id="label">
+                    <!-- =========field-1=========== -->
+                    <div class="field field-1 " id="field-1">
+                        <div class="row">
+                            <div class="col mb-3">
+                                <label for="" class="form-label">Data</label>
+                                <select class="form-select" name="#" id="data-1">
+
+                                </select>
+                            </div>
+                            <div class="col mb-3">
+                                <label for="" class="form-label">Label</label>
+                                <input type="text" class="form-control label" name="#" id="label-1" />
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col mb-3">
+                                <label for="" class="form-label">Till</label>
+                                <select class="form-select" name="#" id="till-1">
+
+                                </select>
+                            </div>
+                            <div class="col mb-3">
+                                <label for="" class="form-label">Priority</label>
+                                <input type="number" class="form-control" name="#" id="priority-1" disabled />
+                            </div>
+                            <div class="col mb-3">
+                                <label for="" class="form-label">Line Feed</label>
+                                <input type="number" class="form-control" name="#" id="linefeed-1" />
+                            </div>
+                        </div>
+                    </div>
+                    <!-- =========field-1-end=========== -->
+
+                    <!-- =========field-2=========== -->
+                    <div class="field field-2 hidden" id="field-2">
+                        <div class="row">
+                            <div class="col mb-3">
+                                <label for="" class="form-label">Data</label>
+                                <select class="form-select" name="#" id="data-2">
+
+                                </select>
+                            </div>
+                            <div class="col mb-3">
+                                <label for="" class="form-label">Label</label>
+                                <input type="text" class="form-control label" name="#" id="label-2" />
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col mb-3">
+                                <label for="" class="form-label">Till</label>
+                                <select class="form-select" name="#" id="till-2">
+
+                                </select>
+                            </div>
+                            <div class="col mb-3">
+                                <label for="" class="form-label">Priority</label>
+                                <input type="number" class="form-control" name="#" id="priority-2" disabled/>
+                            </div>
+                            <div class="col mb-3">
+                                <label for="" class="form-label">Line Feed</label>
+                                <input type="number" class="form-control" name="#" id="linefeed-2" />
+                            </div>
+                        </div>
+                    </div>
+                    <!-- =========field-2-end=========== -->
+
+                    <!-- =========field-3=========== -->
+                    <div class="field field-3 hidden" id="field-3">
+                        <div class="row">
+                            <div class="col mb-3">
+                                <label for="" class="form-label">Data</label>
+                                <select class="form-select" name="#" id="data-3">
+
+                                </select>
+                            </div>
+                            <div class="col mb-3">
+                                <label for="" class="form-label">Label</label>
+                                <input type="text" class="form-control label" name="#" id="label-3" />
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col mb-3">
+                                <label for="" class="form-label">Till</label>
+                                <select class="form-select" name="#" id="till-3">
+
+                                </select>
+                            </div>
+                            <div class="col mb-3">
+                                <label for="" class="form-label">Priority</label>
+                                <input type="number" class="form-control" name="#" id="priority-3" disabled/>
+                            </div>
+                            <div class="col mb-3">
+                                <label for="" class="form-label">Line Feed</label>
+                                <input type="number" class="form-control" name="#" id="linefeed-3" />
+                            </div>
+                        </div>
+                    </div>
+                    <!-- =========field-3-end=========== -->
+
+                    <!-- =========field-4=========== -->
+                    <div class="field field-4 hidden" id="field-4">
+                        <div class="row">
+                            <div class="col mb-3">
+                                <label for="" class="form-label">Data</label>
+                                <select class="form-select" name="#" id="data-4">
+
+                                </select>
+                            </div>
+                            <div class="col mb-3">
+                                <label for="" class="form-label">Label</label>
+                                <input type="text" class="form-control label" name="#" id="label-4" />
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col mb-3">
+                                <label for="" class="form-label">Till</label>
+                                <select class="form-select" name="#" id="till-4">
+
+                                </select>
+                            </div>
+                            <div class="col mb-3">
+                                <label for="" class="form-label">Priority</label>
+                                <input type="number" class="form-control" name="#" id="priority-4" disabled/>
+                            </div>
+                            <div class="col mb-3">
+                                <label for="" class="form-label">Line Feed</label>
+                                <input type="number" class="form-control" name="#" id="linefeed-4" />
+                            </div>
+                        </div>
+                    </div>
+                    <!-- =========field-4-end=========== -->
+
+                    <!-- =========field-5=========== -->
+                    <div class="field field-5 hidden" id="field-5">
+                        <div class="row">
+                            <div class="col mb-3">
+                                <label for="" class="form-label">Data</label>
+                                <select class="form-select" name="#" id="data-5">
+
+                                </select>
+                            </div>
+                            <div class="col mb-3">
+                                <label for="" class="form-label">Label</label>
+                                <input type="text" class="form-control label" name="#" id="label-5" />
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col mb-3">
+                                <label for="" class="form-label">Till</label>
+                                <select class="form-select" name="#" id="till-5">
+
+                                </select>
+                            </div>
+                            <div class="col mb-3">
+                                <label for="" class="form-label">Priority</label>
+                                <input type="number" class="form-control" name="#" id="priority-5" disabled/>
+                            </div>
+                            <div class="col mb-3">
+                                <label for="" class="form-label">Line Feed</label>
+                                <input type="number" class="form-control" name="#" id="linefeed-5" />
+                            </div>
+                        </div>
+                    </div>
+                    <!-- =========field-5-end=========== -->
+                </section>
+            </div>
+        </div>
+    </div>
+    <div class="overlay" id="overlay"></div>
+    <div class="popup-container" id="popup">
+        <span class="close-btn" onclick="closePopup()">×</span>
+        <div style="display:flex;">
+            <p id="label_1" class="mx-3"></p>
+            <p id="value_1"></p>
+        </div>
+        <div style="display:flex;">
+            <p id="label_2" class="mx-3"></p>
+            <p id="value_2"></p>
+        </div>
+        <div style="display:flex;">
+            <p id="label_3" class="mx-3"></p>
+            <p id="value_3"></p>
+        </div>
+        <div style="display:flex;">
+            <p id="label_4" class="mx-3"></p>
+            <p id="value_4"></p>
+        </div>
+        <div style="display:flex;">
+            <p id="label_5" class="mx-3"></p>
+            <p id="value_5"></p>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
